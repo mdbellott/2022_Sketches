@@ -1,0 +1,35 @@
+// Base Code: https://github.com/junkiyoshi/Insta20220601   
+
+#pragma once
+
+#include "ofMain.h"
+#include "ofxColorGradient.h"
+
+
+class mb_12_30 : public ofBaseApp{
+
+    public:
+        void setup();
+        void update();
+        void draw();
+
+        void keyPressed(int key);
+        void keyReleased(int key);
+        void mouseMoved(int x, int y );
+        void mouseDragged(int x, int y, int button);
+        void mousePressed(int x, int y, int button);
+        void mouseReleased(int x, int y, int button);
+        void mouseEntered(int x, int y);
+        void mouseExited(int x, int y);
+        void windowResized(int w, int h);
+        void dragEvent(ofDragInfo dragInfo);
+        void gotMessage(ofMessage msg);
+     
+        ofEasyCam cam;
+        ofxColorGradient<ofColor> gradient;
+    
+        ofMesh face, frame;
+        void setRingToMesh(ofMesh& face_target, ofMesh& frame_target, glm::vec3 location,
+                           float radius, float height, ofColor face_color, ofColor frame_color);
+    
+};
